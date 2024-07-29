@@ -3,6 +3,8 @@ import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./components/page/About.jsx";
 
 function usePrevious(value) {
   const ref = useRef(null);
@@ -97,7 +99,13 @@ function App(props) {
 
   return (
     <div className="todoapp stack-large">
-      <h1>Todo App</h1>
+      <BrowserRouter>
+        <div className="">
+          <Routes>
+            <Route exact path="/about" element={<About />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">{filterList}</div>
       <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
