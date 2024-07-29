@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css";
+import HelloApp from "./components/HelloApp";
+import './assets/style/index.css'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-         Hey, Welcome to my todo app
-        </p>
+        <HelloApp />
       </header>
     </div>
   );
